@@ -44,37 +44,7 @@ AWS-ATS-CV-Serverless-Project/
 
 ## 🏗️ Architecture
 
-```
-                        ┌─────────────────┐
-        User ───────►   │   Internet GW    │
-                        └────────┬─────────┘
-                                 │
-                     ┌───────────▼───────────┐
-                     │  Application Load      │
-                     │  Balancer (Public)     │
-                     └─────┬───────────┬──────┘
-                           │           │
-                 ┌─────────▼──┐   ┌────▼────────┐
-                 │  EC2 (AZ-a) │   │  EC2 (AZ-b) │
-                 │  Flask App  │   │  Flask App  │
-                 └─────┬───────┘   └──────┬──────┘
-                       │                  │
-                       └────────┬─────────┘
-                                │
-                        ┌───────▼────────┐
-                        │  API Gateway   │
-                        └───┬────────┬───┘
-                            │        │
-                  ┌─────────▼──┐ ┌───▼───────────┐
-                  │  Lambda:   │ │  Lambda:      │
-                  │  Generator │ │  JD Analyzer  │
-                  └─────┬──────┘ └───────┬───────┘
-                        │                │
-                  ┌─────▼─────┐   ┌──────▼──────┐
-                  │  Amazon   │   │  DynamoDB   │
-                  │  S3       │   │  Table      │
-                  └───────────┘   └─────────────┘
-```
+![Architecture Diagram](screenshots/architecture-diagram.png)
 
 ### AWS Services Used
 
